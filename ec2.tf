@@ -16,27 +16,22 @@ resource "aws_security_group" "allow_http_ssh" {
   description = "Security group to allow HTTP and SSH traffic"
   vpc_id      = aws_vpc.terraform-vpc.id # Associate with the correct VPC
 
+  # Ingress rules (incoming traffic)
   ingress {
-    description = "Allow SSH"
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    description = "Allow HTTP"
+    description = "Allow HTTP (IPv4)"
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+
+    cidr_blocks = ["0.0.0.0/0"]  # Allows HTTP traffic from any IPv4 address
   }
 
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
+  ingress {
+    description = "Allow HTTP (IPv6)"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    ipv6_cidr_blocks = ["::/0"]  # Allows HTTP traffic from any IPv6 address
   }
 
   tags = {
