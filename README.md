@@ -12,10 +12,11 @@
 ![Screenshot from 2024-09-05 12-28-55](https://github.com/user-attachments/assets/4a767539-7742-4496-a6c3-a6afcd32b854)
 # create security group
 ![Screenshot from 2024-09-05 13-35-19](https://github.com/user-attachments/assets/f39ef448-e1ea-4c1b-a16c-f0645dc3f808)
+# show output
+![Screenshot from 2024-09-05 14-44-49](https://github.com/user-attachments/assets/4b414832-67d4-42db-ae4d-35ef29b57f1e)
 # commands to run project 
 ```
 terraform init
 terraform plan
 terraform apply
 ```
-Footer
