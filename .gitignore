@@ -1,2 +1,2 @@
 .terraform
-backend.terraform
+backend.tf
